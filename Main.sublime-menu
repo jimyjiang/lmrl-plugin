@@ -1,0 +1,49 @@
+[
+  {
+    "id": "tools",
+    "children": [
+      { "caption": "-" },
+      { "caption": "Fetch Sermons", "command": "fetch_sermons" },
+      { "caption": "Show Player Status", "command": "show_player_status" },
+      { "caption": "Hide Player Status", "command": "hide_player_status" },
+    ],
+  },
+  {
+    "id": "preferences",
+    "children": [
+      {
+        "id": "package-settings",
+        "children": [
+          {
+            "caption": "lmrl plugin",
+            "children": [
+              {
+                "command": "open_file",
+                "args": {
+                  "file": "${packages}/lmrl-plugin/README.md",
+                },
+                "caption": "README",
+              },
+              { "caption": "-" },
+              {
+                "command": "open_file",
+                "args": {
+                  "file": "${packages}/lmrl-plugin/lmrl-plugin.sublime-settings",
+                },
+                "caption": "Settings – Default",
+              },
+              {
+                "command": "open_file",
+                "args": {
+                  "file": "${packages}/User/lmrl-plugin.sublime-settings",
+                },
+                "caption": "Settings – User",
+              },
+              { "caption": "-" },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+]

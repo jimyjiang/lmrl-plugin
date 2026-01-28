@@ -1,0 +1,36 @@
+[
+  { "caption": "lmrl-plugin: Bible", "command": "bible" },
+  { "caption": "lmrl-plugin: BibleGoMove", "command": "bible_go_move" },
+  {
+    "caption": "lmrl-plugin: FetchSermons",
+    "command": "fetch_sermons",
+  },
+  {
+    "caption": "lmrl-plugin: PlayPauseAudioFf",
+    "command": "play_pause_audio_ff",
+  },
+  {
+    "caption": "lmrl-plugin: RewindAudioFf",
+    "command": "rewind_audio_ff",
+  },
+  {
+    "caption": "lmrl-plugin: ForwardAudioFf",
+    "command": "forward_audio_ff",
+  },
+  {
+    "caption": "lmrl-plugin: SkipToPreviousSegmentAudioFf",
+    "command": "skip_to_previous_segment_audio_ff",
+  },
+  {
+    "caption": "lmrl-plugin: SkipToNextSegmentAudioFf",
+    "command": "skip_to_next_segment_audio_ff",
+  },
+  {
+    "caption": "lmrl-plugin: ShowPlayerStatus",
+    "command": "show_player_status",
+  },
+  {
+    "caption": "lmrl-plugin: HidePlayerStatus",
+    "command": "hide_player_status",
+  },
+]

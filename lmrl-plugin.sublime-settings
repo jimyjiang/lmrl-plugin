@@ -1,0 +1,11 @@
+{
+	"lmrl":{
+		"remote":{
+			"http_base": "http://localhost:3001",
+			"fetch_sermon_list": "lmrl/api/sermons"
+		},
+		"local":{
+			"mp3_base_path": "~/doc/基督/灵命日粮"
+		}
+	}
+}

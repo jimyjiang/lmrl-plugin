@@ -1,0 +1,31 @@
+[
+  { "keys": ["command+j", "command+r"], "command": "fetch_sermons" },
+  { "keys": ["command+j", "command+p"], "command": "play_pause_audio_ff" },
+  { "keys": ["command+j", "command+b"], "command": "bible" },
+  {
+    "keys": ["ctrl+alt+up"],
+    "command": "bible_go_move",
+    "args": { "direction": "up" },
+  },
+  {
+    "keys": ["ctrl+alt+down"],
+    "command": "bible_go_move",
+    "args": { "direction": "down" },
+  },
+  {
+    "keys": ["ctrl+alt+left"],
+    "command": "rewind_audio_ff",
+  },
+  {
+    "keys": ["ctrl+alt+right"],
+    "command": "forward_audio_ff",
+  },
+  {
+    "keys": ["ctrl+alt+shift+left"],
+    "command": "skip_to_previous_segment_audio_ff",
+  },
+  {
+    "keys": ["ctrl+alt+shift+right"],
+    "command": "skip_to_next_segment_audio_ff",
+  },
+]
