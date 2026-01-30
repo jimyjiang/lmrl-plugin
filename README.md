@@ -30,10 +30,15 @@ sublime plugin
 
 ## 快捷键
 
+### 灵命日粮播放器
+
 - key:(command + j, command + r): 播放列表
 - key:(command + j, command + p): 播放/暂停
 - key:(ctrl + option + left/right): 后退/快进
 - key:(ctrl + option + shift + left/right): 前一段/后一段
+
+### 查询圣经
+
 - key:(command + j, command + b): 查经
 - key:(ctrl + option + up/down): 向上查经/向下查经
 
