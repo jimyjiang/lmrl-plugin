@@ -1,10 +1,11 @@
 import sublime, sublime_plugin
 import os, subprocess
 import locale
-from .Common import Command
 import re
+from .Common.Consts import LMRL_BIBLE_ENGINE
+from . import bible_cmd_engine
+from . import bible_http_engine
 
-biblego_path = "~/.go/current/gopath/bin/biblego"
 
 def insert_after_selection(self, edit, region, word):
     end_point = region.end()
@@ -36,7 +37,7 @@ def insert_header_selection(self, edit, region, word):
 
 """
 BibleGo 命令
-command + b + b
+command + j + b
 """ 
 class BibleCommand(sublime_plugin.TextCommand):
     def run(self, edit):
@@ -49,8 +50,12 @@ class BibleCommand(sublime_plugin.TextCommand):
             content = self.view.substr(line_region)
         else:
             content = self.view.substr(range)
-        cmd = "%s \"%s\"" % (biblego_path, content)
-        word = Command.run_command(cmd)
+        word = ""
+        print(LMRL_BIBLE_ENGINE.fget())
+        if LMRL_BIBLE_ENGINE.fget() == "http":
+            word = bible_http_engine.SearchBible(content)
+        else:
+            word = bible_cmd_engine.SearchBible(content)
         insert_after_selection(self, edit, range, word)
 
 """
@@ -69,8 +74,13 @@ class BibleGoMoveCommand(sublime_plugin.TextCommand):
             content = self.view.substr(range)
         result = content.split(' ')[0]  # 默认取第一个空格前的部分，如果没有空格，split(' ') 会返回 [content]
         verse = self.getVerse(result, direction)
-        cmd = "%s \"%s\"" % (biblego_path, verse)
-        word = Command.run_command(cmd)
+        
+        word = "" 
+        if LMRL_BIBLE_ENGINE.fget() == "http":
+            word = bible_http_engine.SearchBible(verse)
+        else:
+            word = bible_cmd_engine.SearchBible(verse)
+
         if direction == "up":
             insert_header_selection(self, edit, range, word)
         else:

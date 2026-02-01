@@ -42,10 +42,13 @@ DEBUG = property(lambda: _config.get("plugin.debug", False))
 
 # 定义常量
 
-# 灵命日粮
+# bible engine
+LMRL_BIBLE_ENGINE = property(lambda: _config.get("lmrl.bible.engine", "cmd"))
 # remote
 LMRL_HTTP_BASE = property(lambda: _config.get("lmrl.remote.http_base", "http://localhost:3001"))
 LMRL_FETCH_SERMON_LIST_URL = property(lambda: _config.get("lmrl.remote.fetch_sermon_list", "lmrl/api/sermons")) 
 
 #local
 LMRL_LOCAL_BASE_PATH = property(lambda: _config.get("lmrl.local.mp3_base_path", "~/doc/基督/灵命日粮"))
+# bible_search_cmd
+LMRL_BIBLE_SEARCH_CMD = property(lambda: _config.get("lmrl.local.bible_search_cmd", "~/.go/current/gopath/bin/biblego"))
