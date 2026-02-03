@@ -20,16 +20,27 @@ class _ConfigLoader:
         """配置文件变更时重新加载"""
         self.settings = sublime.load_settings("lmrl-plugin.sublime-settings")
 
+    def _get_nested(self, root, keys):
+        cur = root
+        for k in keys:
+            if isinstance(cur, dict) and k in cur:
+                cur = cur[k]
+            else:
+                return None
+        return cur
+
     def get(self, key, default=None):
         """支持嵌套键（如 'plugin.timeout'）"""
         keys = key.split('.')
-        value = self.settings.get(keys[0]) or self.default_settings.get(keys[0])
-        
-        for k in keys[1:]:
-            if isinstance(value, dict):
-                value = value.get(k)
-            else:
-                return default  # 路径不完整时返回默认值
+        user_root = self.settings.get(keys[0])
+        default_root = self.default_settings.get(keys[0])
+
+        if len(keys) == 1:
+            value = user_root if user_root is not None else default_root
+        else:
+            user_value = self._get_nested(user_root, keys[1:])
+            value = user_value if user_value is not None else self._get_nested(default_root, keys[1:])
+
         return value if value is not None else default
 
 # 单例配置加载器
