@@ -6,7 +6,6 @@ import tempfile
 from . import mp3_player 
 from . import sermons
 from .Common.SermonFile import SermonFile
-import requests
 from .Common.Consts import LMRL_HTTP_BASE, LMRL_FETCH_SERMON_LIST_URL
 from urllib.parse import urljoin
 
